@@ -97,7 +97,7 @@ function ArtForm()  {
     return (
         <>
           <form onSubmit={createPin}> {/* Pass the function directly */}
-            <h3> Create a new Art Piece</h3>
+            <h3 className="form-title"> Create a new Art Piece</h3>
             <div className='label-group'>
               <label 
                 htmlFor="name"> Name: </label>

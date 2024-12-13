@@ -1,54 +1,49 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-
 /* my styles */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+/* navbar */
+
+nav {
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  padding: 15px;
+  background-color: bisque;
+}
+
+nav h1 {
+  padding: 15px;
+}
+
+.nav-links {
+  display: flex;
+  padding: 15px;
+  list-style: none;
+}
+.nav-link {
+  padding: 2%;
+  margin: 0 15px;
+}
+
 
 .main {
   display: flex;
-  width: 60vw;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  width: 100vw;
 }
+
+.main > * {
+  margin: 15px;
+}
+
 
 .gm-style-iw-chr {
   border: none;
@@ -78,11 +73,27 @@ form {
   padding: 40px;
   background-color: rgb(5, 4, 53);
   border-radius: 25px;
+  color: white;
+}
+
+.form-title {
+  padding: 25px;
+  font-size: 1.4rem;
 }
 
 form button {
   margin-top: 15px;
+  padding: 4%;
   width: 150px;
+  background-color: rgb(21, 21, 22);
+  border: 0.7px solid rgb(21, 21, 22);
+  color: white;
+  border-radius: 8px;
+}
+
+form button:hover {
+  cursor: pointer;
+  border: 0.7px solid rgb(4, 83, 133);
 }
 
 form input {
@@ -96,6 +107,7 @@ form input {
 .label-group {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0.5rem;
   width: 110%;
 }
