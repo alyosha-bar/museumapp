@@ -85,7 +85,6 @@ app.post("/pin", async (req, res) => {
 
 
 app.get("/pins", async (req, res) => {
-    console.log("returning all pins.")
 
     // const locations = [
     //     { key: 'bigBen', location: { lat: 51.5007292, lng: -0.1246254 } },

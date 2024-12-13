@@ -13,12 +13,7 @@ function ArtForm()  {
 
     const [name, setName] = useState<string>("");
     const [author, setAuthor] = useState<string>("");
-    const [address, setAddress] = useState<any>(""); // use formatted_address
-    const [lat, setLat] = useState<number | null>(null);
-    const [lng, setLng] = useState<number | null>(null);
 
-
-  
     // The type for e is React.FormEvent<HTMLFormElement>
     const createPin = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault(); // Prevent default form submission behavior
@@ -64,21 +59,22 @@ function ArtForm()  {
 
     const savePin = async (body : any) => {
 
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(body)
-        };
+      const requestOptions = {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body)
+      };
 
-        const response = await fetch("/api/pin", requestOptions)
+      const response = await fetch("/api/pin", requestOptions)
 
-        if (!response.ok) {
-            throw new Error("Error saving pin.")
-        }
-        const data = response.json()
-        console.log(data) // save the new version pins to the locations state
+      if (!response.ok) {
+          throw new Error("Error saving pin.")
+      }
+      const data = response.json()
+      console.log(data) // save the new version pins to the locations state
 
-
+      // pass this data into the parent component - App.tsx
+      // App.tsx passes is as props into the Map component
     }
 
 

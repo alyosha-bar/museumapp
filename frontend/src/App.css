@@ -50,6 +50,26 @@
   justify-content: space-between;
 }
 
+.gm-style-iw-chr {
+  border: none;
+  color: black;
+}
+
+.poi-info-window {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  padding: 5px;
+  width: 90%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.poi-info-window * {
+  padding: 2px;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -65,6 +85,14 @@ form button {
   width: 150px;
 }
 
+form input {
+  padding: 12px;
+  background-color: aliceblue;
+  border: none;
+  border-radius: 5px;
+  color: black;
+}
+
 .label-group {
   display: flex;
   justify-content: space-between;
@@ -74,7 +102,6 @@ form button {
 
 .map {
   display: flex;
-  width: 400px;
-  height: 400px;
-
+  width: 500px;
+  height: 500px;
 }

@@ -1,4 +1,4 @@
-import { useJsApiLoader } from "@react-google-maps/api";
+import { InfoWindow, useJsApiLoader } from "@react-google-maps/api";
 import { 
     AdvancedMarker, 
     APIProvider, 
@@ -13,27 +13,8 @@ type Poi = { key: string, location: google.maps.LatLngLiteral };
 
 
 function Markers() {
-
-    // const locations: Poi[] = [
-    //     { key: 'bigBen', location: { lat: 51.5007292, lng: -0.1246254 } },
-    //     { key: 'towerOfLondon', location: { lat: 51.5081124, lng: -0.0759493 } },
-    //     { key: 'buckinghamPalace', location: { lat: 51.501364, lng: -0.14189 } },
-    //     { key: 'londonEye', location: { lat: 51.5032973, lng: -0.1195537 } },
-    //     { key: 'britishMuseum', location: { lat: 51.5194134, lng: -0.1269562 } },
-    //     { key: 'trafalgarSquare', location: { lat: 51.508039, lng: -0.128069 } },
-    //     { key: 'stPaulsCathedral', location: { lat: 51.5138453, lng: -0.0983515 } },
-    //     { key: 'naturalHistoryMuseum', location: { lat: 51.496715, lng: -0.176367 } },
-    //     { key: 'tateModern', location: { lat: 51.5075939, lng: -0.0993568 } },
-    //     { key: 'hydePark', location: { lat: 51.5072682, lng: -0.1657303 } },
-    //     { key: 'coventGarden', location: { lat: 51.511756, lng: -0.123041 } },
-    //     { key: 'shard', location: { lat: 51.5045044, lng: -0.0865199 } },
-    //     { key: 'oxfordStreet', location: { lat: 51.5144983, lng: -0.1465268 } },
-    //     { key: 'camdenMarket', location: { lat: 51.5412885, lng: -0.1445944 } },
-    //     { key: 'kewGardens', location: { lat: 51.4787433, lng: -0.2955083 } },
-    // ];
-
     const [locations, setLocations] = useState<Poi[]>()
-
+    const [selectedLocation, setSelectedLocation] = useState<Poi | null>()
 
     useEffect(() => {
         const fetchData = async () => {
@@ -102,16 +83,14 @@ function MapContainer() {
 
                 <Map
                     mapId={'449bde27d5cd97d2'}
-                    defaultZoom={11}
-                    defaultCenter={ { lat: 51.509576038834986, lng: -0.1170313110403276 } }
+                    defaultZoom={12}
+                    defaultCenter={ { lat: 51.509576038834986, lng: -0.1040313110403276 } }
                     onCameraChanged={ (ev: MapCameraChangedEvent) =>
                       console.log('camera changed:', ev.detail.center, 'zoom:', ev.detail.zoom)
                     }
                 >
                     <Markers></Markers>
                 </Map>
-
-
             </APIProvider>
         </div> }
       </>
