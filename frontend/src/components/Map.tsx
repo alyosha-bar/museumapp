@@ -11,39 +11,11 @@ import { useEffect, useState } from "react";
 
 type Poi = { key: string, location: google.maps.LatLngLiteral };
 
+type Props = {
+    locations: Poi[];
+}
 
-function Markers() {
-    const [locations, setLocations] = useState<Poi[]>()
-    const [selectedLocation, setSelectedLocation] = useState<Poi | null>()
-
-    useEffect(() => {
-        const fetchData = async () => {
-          try {
-            const response = await fetch("/api/pins", {
-                method: "GET",
-            });
-    
-            if (response.ok) {
-                const data = await response.json();
-                console.log(data); // or set state with the response data
-
-                // Transform the data to match the LatLngLiteral structure
-                const formattedData: Poi[] = data.map((item: { key: string; lat: number; lng: number }) => ({
-                    key: item.key,
-                    location: { lat: item.lat, lng: item.lng }, // Transform lat/lng into LatLngLiteral
-                }));
-
-                setLocations(formattedData)
-            } else {
-                console.error('Error fetching data:', response.status);
-            }
-            } catch (error) {
-                console.error('Fetch error:', error);
-            }
-        };
-    
-        fetchData();
-    }, []);
+const Markers : React.FC<Props> = ( {locations}) => {
 
     return (
         <div>
@@ -61,7 +33,7 @@ function Markers() {
 
 
 
-function MapContainer() {
+const MapContainer : React.FC<Props> = ( {locations}) => {
 
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
@@ -89,7 +61,7 @@ function MapContainer() {
                       console.log('camera changed:', ev.detail.center, 'zoom:', ev.detail.zoom)
                     }
                 >
-                    <Markers></Markers>
+                    <Markers locations={locations}></Markers>
                 </Map>
             </APIProvider>
         </div> }
