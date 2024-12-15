@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import ArtForm from "../components/ArtForm";
 import MapContainer from "../components/Map";
+import { useClerk } from "@clerk/clerk-react";
+import { useNavigate } from "react-router-dom";
 
 
 type Poi = { key: string, location: google.maps.LatLngLiteral };

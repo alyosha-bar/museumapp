@@ -5,6 +5,7 @@ import MapContainer from './components/Map';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
+import Landing from './pages/Landing';
 
 function App() {
 
@@ -13,8 +14,8 @@ function App() {
       <Navbar></Navbar>
       <div className='main'>
         <Routes>
-          <Route path='/' element={<Home />}></Route>
-          <Route path='/yo' element={<> <div> YOO </div></>}></Route>
+          <Route path='/home' element={<Home />}></Route>
+          <Route path='/' element={<Landing />}></Route>
         </Routes>
       </div>
     </>

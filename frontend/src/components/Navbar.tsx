@@ -10,7 +10,9 @@ function Navbar() {
 
             <ul className="nav-links">
             <SignedOut>
-                <SignInButton />
+                <SignInButton>
+                    <button className="sign-in"> Sign In </button>
+                </SignInButton>
             </SignedOut>
             <SignedIn>
                 <UserButton />

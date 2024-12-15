@@ -1,4 +1,4 @@
-
+- [ ] Clerk React Router
 - [ ] Change database schema to include user ids from clerk
 - [ ] Improve routing system by using Clerk and protected routes
 - [ ] Change database schema to include museums and "common locations"

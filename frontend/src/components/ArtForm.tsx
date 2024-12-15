@@ -43,6 +43,7 @@ const ArtForm : React.FC<Props> = ( { check, handlePin } ) =>  {
             handlePin(e, name, author, inputref.current)
             setName("")
             setAuthor("")
+            inputref.current = null
             }
             }> {/* Pass the function directly */}
             <h3 className="form-title"> Create a new Art Piece</h3>
